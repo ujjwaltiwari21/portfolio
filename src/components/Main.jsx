@@ -2,7 +2,9 @@ import Hero from "./Hero"
 import MarqueeSection from "./Marquee"
 import Pros from "./Pros";
 import Projects from "./Projects";
-import BentoGrid from "./BentoGrid";
+import Poster from "./Poster";
+import Footer from "./Footer";
+// import BentoGrid from "./BentoGrid";
 
 export default function Main(){
     return(
@@ -11,7 +13,9 @@ export default function Main(){
             <MarqueeSection/>
             <Pros/>
             <Projects/>
-            <BentoGrid/>
+            {/* <BentoGrid/> */}
+            <Poster/>
+            <Footer/>
         </div>
     )
 };

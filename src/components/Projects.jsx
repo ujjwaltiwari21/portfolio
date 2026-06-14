@@ -10,10 +10,10 @@ export default function Projects() {
   const scrollSectionRef = useRef()
 
   const projects = [
-    { id: '01', title: 'ZUMELY CAREER', type: 'AI INTEGRATION', color: 'from-emerald-950/40 to-zinc-950' },
-    { id: '02', title: 'INFOTECH SEC', type: 'CYBER ARCHITECTURE', color: 'from-indigo-950/40 to-zinc-950' },
-    { id: '03', title: 'CODENOVA HUD', type: 'MOTION GRAPHICS', color: 'from-purple-950/40 to-zinc-950' },
-    { id: '04', title: 'METRIC ENGINE', type: 'FRONTEND PIPELINE', color: 'from-blue-950/40 to-zinc-950' },
+    { id: '01', type: 'AI INTEGRATION', color: 'from-emerald-950/40 to-zinc-950', image: '/hero/zumely.png', link: 'https://zumely.vercel.app' },
+    { id: '02', type: 'CYBER ARCHITECTURE', color: 'from-indigo-950/40 to-zinc-950', image: '/hero/enfo.png', link: 'https://enfotech.vercel.app' },
+    { id: '03', type: 'MOTION GRAPHICS', color: 'from-purple-950/40 to-zinc-950', image: '/hero/realty.png', link: 'https://youtube.com' },
+    { id: '04', type: 'FRONTEND PIPELINE', color: 'from-blue-950/40 to-zinc-950', image: '/projects/metric.jpg', link: 'https://vercel.com' },
   ]
 
   useGSAP(() => {
@@ -38,8 +38,8 @@ export default function Projects() {
   return (
     <section ref={containerRef} className="w-full h-screen bg-zinc-950 relative overflow-hidden">
       <div className="absolute top-12 left-10 z-30 flex flex-col gap-1">
-        <span className="font-mono text-[10px] text-zinc-500 tracking-widest">// ARCHIVE SHIFT</span>
-        <h2 className="text-xl font-bold tracking-tighter text-white">SELECTED INDEX</h2>
+        <span className="font-mono text-[10px] text-zinc-500 tracking-widest">SELECTED WORKS & METRIC ARCHITECTURE</span>
+        <h2 className="text-xl font-medium tracking-tighter text-white">Designing performance-driven solutions where clean development frameworks meet intuitive layout systems.</h2>
       </div>
 
       <div 
@@ -48,21 +48,31 @@ export default function Projects() {
         style={{ width: `${projects.length * 80}vw` }}
       >
         {projects.map((project, index) => (
-          <div 
+          <a 
             key={index} 
-            className="w-[75vw] md:w-[45vw] h-[55vh] flex-shrink-0 relative rounded-2xl overflow-hidden group border border-zinc-800/30 bg-zinc-900/10 backdrop-blur-sm"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-[75vw] md:w-[45vw] h-[55vh] flex-shrink-0 relative rounded-2xl overflow-hidden group border border-zinc-800/30 bg-zinc-900/10 backdrop-blur-sm block cursor-pointer"
           >
-            <div className={`absolute inset-0 bg-gradient-to-tr ${project.color} z-0 transition-scale duration-700 group-hover:scale-105`} />
+            {/* Project Image Element - Render with precise background hover interpolation */}
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+            />
+
+            <div className={`absolute inset-0 bg-gradient-to-tr ${project.color} opacity-1 group-hover:opacity-95 transition-opacity duration-500 z-[1]`} />
             
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
 
             <div className="absolute inset-0 z-20 p-8 flex flex-col justify-between">
-              <span className="font-mono text-sm text-zinc-600 font-bold group-hover:text-white transition-colors duration-300">
+              {/* <span className="font-mono text-sm text-zinc-600 font-bold group-hover:text-white transition-colors duration-300">
                 {project.id}
-              </span>
+              </span> */}
 
               <div>
-                <span className="font-mono text-[10px] text-zinc-500 tracking-widest block mb-1">
+                <span className="font-mono text-[12px] text-[#ff7200] tracking-widest block mb-1">
                   {project.type}
                 </span>
                 <h3 className="text-2xl md:text-4xl font-black tracking-tighter text-zinc-300 group-hover:text-white transition-colors duration-300">
@@ -76,7 +86,7 @@ export default function Projects() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
