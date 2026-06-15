@@ -63,7 +63,7 @@ export default function Face() {
 
       {/* 2. LAYER 2 (z-10) - LEFT EYE SOCKET + PUPIL (Coordinates Locked to Erased Hole Geometry) standard context scaling handles standard dynamic standard conflicts mismatch conflict configuration. */}
       <div 
-        className="absolute top-[46%] left-[34%] w-[3%] h-[3%] rounded-full z-10 opacity-30 overflow-hidden flex items-center justify-center bg-black/5" 
+        className="absolute top-[46%] left-[34%] w-[2.8%] h-[2.8%] rounded-full z-10 opacity-30 overflow-hidden flex items-center justify-center bg-black/5" 
       >
         <div 
           ref={leftPupilRef}
@@ -81,7 +81,7 @@ export default function Face() {
       
       {/* 3. LAYER 3 (z-10) - RIGHT EYE SOCKET + PUPIL (Coordinates Locked to Erased Hole Geometry) context dynamic Interacting scaled handles configurations standard dynamic Scale parameters dynamic scaled interactions configurations scaled context scaled handles context configurations. */}
       <div 
-        className="absolute top-[46%] left-[57.4%] w-[3%] h-[3%] rounded-full z-10 opacity-30 overflow-hidden flex items-center justify-center bg-black/5" 
+        className="absolute top-[46%] left-[57.4%] w-[2.8%] h-[2.8%] rounded-full z-10 opacity-30 overflow-hidden flex items-center justify-center bg-black/5" 
       >
         <div 
           ref={rightPupilRef}

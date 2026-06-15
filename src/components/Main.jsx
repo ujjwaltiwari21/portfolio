@@ -4,7 +4,8 @@ import Pros from "./Pros";
 import Projects from "./Projects";
 import Poster from "./Poster";
 import Footer from "./Footer";
-// import BentoGrid from "./BentoGrid";
+import BentoGrid from "./BentoGrid";
+import Career from "./Career";
 
 export default function Main(){
     return(
@@ -13,8 +14,9 @@ export default function Main(){
             <MarqueeSection/>
             <Pros/>
             <Projects/>
-            {/* <BentoGrid/> */}
+            <BentoGrid/>
             <Poster/>
+            <Career/>
             <Footer/>
         </div>
     )
