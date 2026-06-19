@@ -135,7 +135,7 @@ export default function Footer() {
         
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-mono">
           <div className="text-zinc-600 text-center md:text-left">
-            © {new Date().getFullYear()} UJJWAL. ALL RIGHTS RESERVED.
+            © 2025 - {new Date().getFullYear()} UJJWAL. ALL RIGHTS RESERVED.
           </div>
           
           {/* Social Links with Magnetic Grid Hooks */}

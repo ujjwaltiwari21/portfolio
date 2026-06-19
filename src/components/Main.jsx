@@ -6,6 +6,7 @@ import Poster from "./Poster";
 import Footer from "./Footer";
 import BentoGrid from "./BentoGrid";
 import Career from "./Career";
+import Skills from "./Skills";
 
 export default function Main(){
     return(
@@ -17,6 +18,7 @@ export default function Main(){
             <BentoGrid/>
             <Poster/>
             <Career/>
+            <Skills/>
             <Footer/>
         </div>
     )
