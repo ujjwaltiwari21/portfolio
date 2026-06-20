@@ -7,10 +7,12 @@ import Footer from "./Footer";
 import BentoGrid from "./BentoGrid";
 import Career from "./Career";
 import Skills from "./Skills";
+import Navbar from "./Navbar";
 
 export default function Main(){
     return(
         <div>
+            <Navbar/>
             <Hero/>
             <MarqueeSection/>
             <Pros/>
