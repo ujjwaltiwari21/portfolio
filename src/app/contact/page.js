@@ -68,7 +68,7 @@ export default function ContactPage() {
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2">
               <span className="text-[10px] text-zinc-600 font-medium tracking-widest uppercase">Location</span>
-              <h3 className="text-lg font-medium text-zinc-200 tracking-wide">Bhojpur, Bihar, India</h3>
+              <h3 className="text-lg font-medium text-zinc-200 tracking-wide">New-Delhi, Delhi, India</h3>
               <p className="text-xs text-zinc-500 font-light mt-0.5">Working globally from my digital studio.</p>
             </div>
 
