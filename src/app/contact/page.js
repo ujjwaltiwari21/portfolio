@@ -4,18 +4,18 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
-  const SERVICE_ID = "service_5afdgf9";
-  const PUBLIC_KEY = "XjfCWj0AFgeimG0fH";
-  const TEMPLATE_ID = "template_jn0725k";
+  const SERVICE_ID = "service_5afdgf9"
+  const PUBLIC_KEY = "XjfCWj0AFgeimG0fH"
+  const TEMPLATE_ID = "template_jn0725k"
 
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [statusMessage, setStatusMessage] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -35,141 +35,135 @@ export default function ContactPage() {
       setStatusMessage('Message sent successfully. I will get back to you shortly.')
       setFormState({ name: '', email: '', subject: '', message: '' })
     } catch (error) {
-      console.error('Email error:', error)
       setIsSubmitting(false)
       setStatusMessage('Failed to send message. Please try again or email directly.')
     }
   }
 
   return (
-    <section className="w-full min-h-screen bg-[#030303] text-zinc-400 py-28 px-4 sm:px-6 md:px-16 flex flex-col justify-center items-center relative overflow-hidden font-sans antialiased selection:bg-white selection:text-black">
+    <section className="w-full min-h-screen bg-[#060607] text-zinc-400 py-12 md:py-24 px-4 sm:px-8 lg:px-16 flex flex-col justify-center items-center font-sans antialiased selection:bg-zinc-800 selection:text-white">
       
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#141517,transparent_70%)] pointer-events-none" />
-      <div className="absolute top-[20%] left-[10%] w-[600px] h-[600px] bg-zinc-900/10 rounded-full blur-[160px] pointer-events-none" />
-      
-      <div className="mb-20 text-center z-10 max-w-2xl select-none">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900/50 border border-zinc-800/60 rounded-full mb-5">
-          <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-          <span className="text-[10px] text-zinc-300 tracking-[0.2em] uppercase font-medium">Available for projects</span>
+      <div className="w-full max-w-5xl mb-10 md:mb-16 text-center lg:text-left select-none">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded mb-4 mx-auto lg:mx-0">
+          <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+          <span className="text-[11px] text-zinc-300 tracking-wider uppercase font-medium">Status: Active</span>
         </div>
-        <h2 className="text-4xl sm:text-6xl font-normal text-white tracking-tight font-serif italic">
-          Let's create something
+        <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight">
+          Get in touch
         </h2>
-        <p className="text-xs sm:text-sm text-zinc-500 mt-4 max-w-md mx-auto leading-relaxed font-light">
-          Have an idea, a project, or just want to say hello? Drop a line and let's start a conversation.
+        <p className="text-sm sm:text-lg text-zinc-500 mt-2 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          We normally respond within one business day. Fill out the form or connect directly via official links
         </p>
       </div>
 
-      <div className="w-full max-w-5xl z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
         
-        <div className="lg:col-span-5 bg-[#09090b]/40 backdrop-blur-xl border border-zinc-900 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-          
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-zinc-600 font-medium tracking-widest uppercase">Location</span>
-              <h3 className="text-lg font-medium text-zinc-200 tracking-wide">New-Delhi, Delhi, India</h3>
-              <p className="text-xs text-zinc-500 font-light mt-0.5">Working globally from my digital studio.</p>
+        <div className="lg:col-span-5 bg-[#0b0b0c] border border-zinc-800/80 rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-sm items-center lg:items-stretch text-center lg:text-left">
+          <div className="flex flex-col gap-8 w-full items-center lg:items-stretch">
+            <div className="flex flex-col gap-1.5 items-center lg:items-start">
+              <span className="text-[11px] text-zinc-500 font-medium tracking-wider uppercase">Headquarters</span>
+              <h3 className="text-base font-medium text-zinc-200">Delhi, India</h3>
+              <p className="text-xs text-zinc-500 max-w-xs">Operating globally to deliver enterprise web platforms and architectures.</p>
             </div>
 
-            <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 to-transparent" />
+            <div className="w-full h-[1px] bg-zinc-900" />
 
-            <div className="flex flex-col gap-5">
-              <span className="text-[10px] text-zinc-600 font-medium tracking-widest uppercase">Contact Details</span>
+            <div className="flex flex-col gap-4 w-full items-center lg:items-stretch">
+              <span className="text-[11px] text-zinc-500 font-medium tracking-wider uppercase">Communications</span>
               
-              <div className="flex items-center gap-4 bg-[#0c0c0e]/60 border border-zinc-900/80 p-4 rounded-2xl transition-all duration-300 hover:border-zinc-800 hover:bg-[#121214]/40">
-                <div className="text-zinc-400 bg-zinc-900/50 p-2.5 rounded-xl border border-zinc-800/50">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 bg-[#121214] border border-zinc-800/60 p-4 rounded-lg w-full">
+                <div className="text-zinc-400 bg-zinc-900 p-2 rounded border border-zinc-800 flex items-center justify-center">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] text-zinc-500 font-medium tracking-wider uppercase">Email Me</span>
-                  <a href="mailto:ujjwalsarvsolution@gmail.com" className="text-xs font-medium text-zinc-300 hover:text-white transition-colors duration-200 mt-0.5">
+                <div className="flex flex-col items-center lg:items-start">
+                  <span className="text-[10px] text-zinc-500 font-medium tracking-wide uppercase">Email Support</span>
+                  <a href="mailto:ujjwalsarvsolution@gmail.com" className="text-xs font-medium text-zinc-300 hover:text-white mt-0.5 break-all">
                     ujjwalsarvsolution@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 bg-[#0c0c0e]/60 border border-zinc-900/80 p-4 rounded-2xl transition-all duration-300 hover:border-zinc-800 hover:bg-[#121214]/40">
-                <div className="text-zinc-400 bg-zinc-900/50 p-2.5 rounded-xl border border-zinc-800/50">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 bg-[#121214] border border-zinc-800/60 p-4 rounded-lg w-full">
+                <div className="text-zinc-400 bg-zinc-900 p-2 rounded border border-zinc-800 flex items-center justify-center">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 00-5.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 00-5.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] text-zinc-500 font-medium tracking-wider uppercase">Socials</span>
-                  <div className="flex items-center gap-3 mt-0.5 text-xs font-medium text-zinc-400">
-                    <a href="https://www.github.com/ujjwaltiwari21" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
-                    <span className="text-zinc-800">/</span>
-                    <a href="https://www.linkedin.com/in/ujjwaltiwari21/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+                <div className="flex flex-col items-center lg:items-start">
+                  <span className="text-[10px] text-zinc-500 font-medium tracking-wide uppercase">profiles</span>
+                  <div className="flex items-center gap-2 mt-0.5 text-xs font-medium text-zinc-400">
+                    <a href="https://www.github.com/ujjwaltiwari21" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
+                    <span className="text-zinc-800">|</span>
+                    <a href="https://www.linkedin.com/in/ujjwaltiwari21/" target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-12 pt-5 border-t border-zinc-900/80 flex items-center gap-2 text-[10px] text-zinc-500 tracking-wide">
+          <div className="mt-8 pt-4 border-t border-zinc-900 flex items-center justify-center lg:justify-start gap-2 text-[11px] text-zinc-500 w-full">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            Response rate: usually within 24 hours
+            Standard Response Protocol Active
           </div>
         </div>
 
-        <div className="lg:col-span-7 bg-[#09090b]/40 backdrop-blur-xl border border-zinc-900 rounded-3xl p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <div className="lg:col-span-7 bg-[#0b0b0c] border border-zinc-800/80 rounded-xl p-6 sm:p-8 shadow-sm">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Your Name</label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="flex flex-col gap-1.5 text-center lg:text-left">
+                <label className="text-[11px] text-zinc-400 font-medium uppercase tracking-wide">Full Name</label>
                 <input 
                   type="text"
                   required
                   value={formState.name}
                   onChange={(e) => setFormState({...formState, name: e.target.value})}
-                  placeholder="John Doe"
-                  className="w-full bg-[#0c0c0e]/80 border border-zinc-900 rounded-2xl px-5 py-4 text-xs text-zinc-200 placeholder-zinc-700 outline-none focus:border-zinc-700 focus:bg-[#111113]/90 transition-all duration-300 shadow-inner"
+                  placeholder="e.g. John Doe"
+                  className="w-full bg-[#121214] border border-zinc-800 rounded px-4 py-3 text-xs text-zinc-200 placeholder-zinc-600 outline-none focus:border-zinc-600 text-center lg:text-left"
                 />
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Email Address</label>
+              <div className="flex flex-col gap-1.5 text-center lg:text-left">
+                <label className="text-[11px] text-zinc-400 font-medium uppercase tracking-wide">Email Address</label>
                 <input 
                   type="email"
                   required
                   value={formState.email}
                   onChange={(e) => setFormState({...formState, email: e.target.value})}
-                  placeholder="john@example.com"
-                  className="w-full bg-[#0c0c0e]/80 border border-zinc-900 rounded-2xl px-5 py-4 text-xs text-zinc-200 placeholder-zinc-700 outline-none focus:border-zinc-700 focus:bg-[#111113]/90 transition-all duration-300 shadow-inner"
+                  placeholder="name@domain.com"
+                  className="w-full bg-[#121214] border border-zinc-800 rounded px-4 py-3 text-xs text-zinc-200 placeholder-zinc-600 outline-none focus:border-zinc-600 text-center lg:text-left"
                 />
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Subject</label>
+            <div className="flex flex-col gap-1.5 text-center lg:text-left">
+              <label className="text-[11px] text-zinc-400 font-medium uppercase tracking-wide">Subject</label>
               <input 
                 type="text"
                 required
                 value={formState.subject}
                 onChange={(e) => setFormState({...formState, subject: e.target.value})}
-                placeholder="Project deployment, consultation, etc."
-                className="w-full bg-[#0c0c0e]/80 border border-zinc-900 rounded-2xl px-5 py-4 text-xs text-zinc-200 placeholder-zinc-700 outline-none focus:border-zinc-700 focus:bg-[#111113]/90 transition-all duration-300 shadow-inner"
+                placeholder="Brief description of inquiry"
+                className="w-full bg-[#121214] border border-zinc-800 rounded px-4 py-3 text-xs text-zinc-200 placeholder-zinc-600 outline-none focus:border-zinc-600 text-center lg:text-left"
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Message</label>
+            <div className="flex flex-col gap-1.5 text-center lg:text-left">
+              <label className="text-[11px] text-zinc-400 font-medium uppercase tracking-wide">Message Body</label>
               <textarea 
                 rows={5}
                 required
                 value={formState.message}
                 onChange={(e) => setFormState({...formState, message: e.target.value})}
-                placeholder="Tell me about your project details..."
-                className="w-full bg-[#0c0c0e]/80 border border-zinc-900 rounded-2xl px-5 py-4 text-xs text-zinc-200 placeholder-zinc-700 outline-none focus:border-zinc-700 focus:bg-[#111113]/90 transition-all duration-300 shadow-inner resize-none leading-relaxed"
+                placeholder="Provide comprehensive details here..."
+                className="w-full bg-[#121214] border border-zinc-800 rounded px-4 py-3 text-xs text-zinc-200 placeholder-zinc-600 outline-none focus:border-zinc-600 resize-none leading-relaxed text-center lg:text-left"
               />
             </div>
 
             {statusMessage && (
-              <div className="text-[11px] font-medium text-zinc-300 bg-zinc-900/40 border border-zinc-800 px-4 py-3.5 rounded-2xl transition-all duration-300">
+              <div className="text-xs text-zinc-300 bg-zinc-900 border border-zinc-800 px-4 py-3 rounded text-center">
                 {statusMessage}
               </div>
             )}
@@ -177,11 +171,11 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-zinc-100 rounded-2xl py-4 text-xs font-semibold text-zinc-950 tracking-wider uppercase transition-all duration-300 hover:bg-white disabled:opacity-40 disabled:pointer-events-none flex items-center justify-center gap-2 group shadow-lg"
+              className="w-full bg-zinc-200 rounded py-3.5 text-xs font-semibold text-zinc-950 tracking-wider uppercase hover:bg-white disabled:opacity-40 disabled:pointer-events-none flex items-center justify-center gap-2 shadow-sm"
             >
-              <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+              <span>{isSubmitting ? 'Processing Request...' : 'Submit Inquiry'}</span>
               {!isSubmitting && (
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-3.5 h-3.5">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               )}
