@@ -47,9 +47,9 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Subtext */}
-          <div className="mt-24 max-w-4xl px-4">
-            <p className="sub-text text-zinc-100 text-base md:text-lg font-light tracking-widest">
+          {/* Subtext - Mobile optimized with better spacing and readability */}
+          <div className="mt-12 sm:mt-16 md:mt-24 max-w-4xl px-4">
+            <p className="sub-text text-zinc-100 text-sm sm:text-base md:text-lg font-light tracking-[0.15em] sm:tracking-widest leading-relaxed">
               Building high-performance web applications with stunning visual experiences.
             </p>
           </div>
